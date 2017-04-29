@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{motto}}</text>
+    <text id="HTTPStatusCode">{{HTTPcode}}</text>
+    <!--<text id="display">{{responseText}}</text>-->
+ <template name="msgItem">
+  <view>
+    <text>#{{item[0]}} Time: {{item[3]}} by {{item[2]}}</text>
+    <text>Content {{item[1]}}</text>
+  </view>
+</template>
+
+<block wx:for="{{responseText}}">
+    <template is="msgItem" data="{{item}}"/>
+</block>
+
+
+    <button type="primary" loading="{{isLoading}}" bindtap="clickRequest">Request</button>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">Hello my lord, {{userInfo.nickName}}!</text>
+  <button wx:if="{{canIUse}}" open-type="contact" >  <icon type="info" size="20" color="blue"/> 客服消息 </button>
+<contact-button wx:else type="default-dark"></contact-button>
+  </view>
+  <button type="primary" loading="true" bindtap="add">{{count}}</button>
+
+  
+</view>
