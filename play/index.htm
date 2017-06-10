@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HAMLET</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<script src="../js/jquery-2.1.4.min.js"></script>
+ 	<script src="../js/bootstrap.min.js"></script>
+ 	<script src="play.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<header>
+<nav class="navbar navbar-default navbar-fixed-top">
+  	<div class="container-fluid">
+    		<div class="navbar-header">
+				<a class="navbar-brand" href="#"><span>Hamlet >>> An interactive reproduction</span></a>
+    		</div>
+    		<div style="float: right;margin: 10px">
+					<span id="currentTime"></span>&nbsp;
+					<button class="debug btn btn-default" onclick="togglePlay()">Toggle</button>
+					<button class="debug btn" onclick="reload('demo2.mp4')">Load Source</button>
+				</div>
+  </div>
+</nav>
+</header>
+<div>
+<br><br><br>
+</div>
+<section id="section">
+<div id="container" class="">
+
+	<video id="video1" autoplay="autoplay">
+	  <source id="mp4_src" src="" type="video/mp4">
+	  Your browser does not support HTML5 video.
+	</video>
+</div>
+</section>
+<div >
+</div>
+<div>	
+	<!-- <video id="video1" autoplay="autoplay">
+	  <source id="mp4_src" src="" type="video/mp4">
+	  Your browser does not support HTML5 video.
+	</video><span id="btn" class="control">Click me to continue to 8s.</span>
+	<span id="btn1" class="control">This navigates to 16 second.</span>
+	<span id="prompt1" class="prompt control">This indicates a breakpoint of the stream.</span></div> -->
+
+</body>
+</html>
