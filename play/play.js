@@ -223,11 +223,17 @@
 			var title = document.createElement('span');
 			var content = document.createElement('span');
 			var shadow = document.createElement('span');
+			var img = document.createElement('img');
+			var progressBar = document.createElement('div');
+			progressBar.className='progressBar';
+			progressBar.innerHTML="<div id='fountainG'><div id='fountainG_1' class='fountainG'></div>	<div id='fountainG_2' class='fountainG'></div><div id='fountainG_3' class='fountainG'></div>	<div id='fountainG_4' class='fountainG'></div><div id='fountainG_5' class='fountainG'></div>	<div id='fountainG_6' class='fountainG'></div><div id='fountainG_7' class='fountainG'></div><div id='fountainG_8' class='fountainG'></div></div>";
+			img.src='hamlet.png';
+			img.className='hamletImg'
 			shadow.className='shadow';
 			$(shadow).animate({opacity:0.3},'slow');
 			title.className = 'optionTitle';
 			content.className= 'optionContent';
-			title.innerHTML = "<span><span class='glyphicon glyphicon-play'></span></span>" + ti;
+			title.innerHTML = "<span><span class='glyphicon glyphicon-play' style='font-size:0.7em'></span></span>" + ti;
 			content.innerHTML = cont;
 			var option1 = showOption(opt1);
 			var option2 = showOption(opt2);
@@ -242,6 +248,7 @@
 				$(content).hide();
 				$(option1).hide();
 				$(option2).hide();
+				$(img).hide();
 			};
 			$(option1).click(function(){
 				media.currentTime = timeSequence[nav1].start;
@@ -257,8 +264,10 @@
 				nowEvent = timeSequence[nav2];
 			});
 			container.appendChild(shadow);
+			container.appendChild(img);
 			container.appendChild(option1);
 			container.appendChild(option2);
+			container.appendChild(progressBar);
 			container.appendChild(title);
 			container.appendChild(content);
 
@@ -270,7 +279,7 @@
 			stab.className="option";
 			var text=document.createElement('span');
 			text.className='optionText';
-			text.innerHTML="<span class='glyphicon glyphicon-chevron-left'></span>"+content;
+			text.innerHTML="<span class='glyphicon glyphicon-chevron-left' style='font-size:0.7em;'></span>"+content;
 			stab.appendChild(text);
 			$(stab).click(function(){
     			$(this).animate({width:'-=100',left:'+=50'},'fast');
